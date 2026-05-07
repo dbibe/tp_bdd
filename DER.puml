@@ -54,19 +54,6 @@ entity MedioPago {
   mdp_descripcion
 }
 
-entity Ciudad {
-  cdad_id : <<PK>>
-  --
-  cdad_nombre
-  cdad_pais <<FK>>
-}
-
-entity Pais {
-  pais_id : <<PK>>
-  --
-  pais_nombre
-}
-
 entity Aerolinea {
   aero_id : <<PK>>
   --
@@ -131,7 +118,7 @@ entity Excursion {
   exc_duracion
   exc_horario
   exc_precio
-  exc_ciudad <<FK>>
+  exc_ciudad
 }
 
 entity Venta {
@@ -285,7 +272,6 @@ MedioPago ||--o{ Venta
 
 Aerolinea ||--o{ Vuelo
 Aeropuerto ||--o{ Vuelo
-Aeropuerto ||--|| Ciudad
 
 Hospedaje ||--o{ Tipo_de_habitacion
 
@@ -298,12 +284,9 @@ Venta ||--o{ Venta_Excursion
 Vuelo ||--o{ Venta_Vuelo
 Tipo_de_habitacion ||--o{ Venta_Hospedaje
 Excursion ||--o{ Venta_Excursion
-Ciudad ||--o{ Excursion
 
 Solicitud_Cotizacion ||--o{ Detalle_Solicitud
 Solicitud_Cotizacion ||--o{ Propuesta
-
-Ciudad ||--o{ Detalle_Solicitud
 
 Propuesta ||--o{ Propuesta_Vuelo
 Propuesta ||--o{ Propuesta_Hospedaje
@@ -319,6 +302,5 @@ Aspecto_Encuesta ||--o{ Valoracion_Encuesta
 Venta ||--o{ Encuesta
 Propuesta ||--o{ Encuesta
 
-Ciudad ||--|| Pais
 
 @enduml
