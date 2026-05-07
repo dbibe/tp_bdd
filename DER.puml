@@ -92,7 +92,8 @@ entity Hospedaje {
   hos_direccion
   hos_horario_checkin
   hos_horario_checkout
-  hos_ciudad: <<FK>>
+  hos_ciudad
+  hos_pais
   hos_incluye_desayuno
 }
 
