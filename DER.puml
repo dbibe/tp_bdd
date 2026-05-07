@@ -42,18 +42,6 @@ entity Agente {
   agt_provincia
 }
 
-entity CanalVenta {
-  cdv_id : <<PK>>
-  --
-  cdv_descripcion
-}
-
-entity MedioPago {
-  mdp_id : <<PK>>
-  --
-  mdp_descripcion
-}
-
 entity Aerolinea {
   aero_codigo : <<PK>>
   --
@@ -132,8 +120,8 @@ entity Venta {
   ven_agencia : <<FK>>
   ven_cli : <<FK>>
   ven_agente : <<FK>>
-  ven_cdv : <<FK>>
-  ven_medio_pago : <<FK>>
+  ven_cdv
+  ven_medio_pago
   ven_fecha
   ven_subtotal
   ven_descuento
@@ -272,9 +260,6 @@ Agente ||--o{ Venta
 Agente ||--o{ Solicitud_Cotizacion
 Agente ||--o{ Propuesta
 Agente ||--o{ Encuesta
-
-CanalVenta ||--o{ Venta
-MedioPago ||--o{ Venta
 
 Aerolinea ||--o{ Vuelo
 Aeropuerto ||--o{ Vuelo
