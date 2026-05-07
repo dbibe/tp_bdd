@@ -55,18 +55,19 @@ entity MedioPago {
 }
 
 entity Aerolinea {
-  aero_id : <<PK>>
+  aero_codigo : <<PK>>
   --
   aero_nombre
+  aero_pais
+  aero_alianza
 }
 
 entity Aeropuerto {
-  id_aeropuerto : <<PK>>
+  aer_codigo : <<PK>>
   --
-  codigo
-  nombre
-  ciudad
-  pais
+  aer_descripcion
+  aer_ciudad
+  aer_pais
 }
 
 entity Vuelo {
