@@ -198,13 +198,13 @@ entity Solicitud_Cotizacion {
   sol_observaciones
 }
 
-entity Solicitud_Ciudad {
-  sc_id : <<PK>>
+entity Detalle_Solicitud {
+  ds_id : <<PK>>
   --
-  sc_solicitud : <<FK>>
-  sc_ciudad : <<FK>>
-  sc_cant_dias
-  sc_observaciones
+  ds_solicitud : <<FK>>
+  ds_ciudad : <<FK>>
+  ds_cant_dias
+  ds_observaciones
 }
 
 entity Propuesta {
@@ -300,10 +300,10 @@ Tipo_de_habitacion ||--o{ Venta_Hospedaje
 Excursion ||--o{ Venta_Excursion
 Ciudad ||--o{ Excursion
 
-Solicitud_Cotizacion ||--o{ Solicitud_Ciudad
+Solicitud_Cotizacion ||--o{ Detalle_Solicitud
 Solicitud_Cotizacion ||--o{ Propuesta
 
-Ciudad ||--o{ Solicitud_Ciudad
+Ciudad ||--o{ Detalle_Solicitud
 
 Propuesta ||--o{ Propuesta_Vuelo
 Propuesta ||--o{ Propuesta_Hospedaje
