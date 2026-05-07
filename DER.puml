@@ -61,12 +61,11 @@ entity Aerolinea {
 }
 
 entity Aeropuerto {
-  id_aeropuerto : <<PK>>
+  aer_codigo : <<PK>>
   --
-  codigo
-  nombre
-  ciudad
-  pais
+  aer_descripcion
+  aer_ciudad
+  aer_pais
 }
 
 entity Vuelo {
