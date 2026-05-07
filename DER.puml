@@ -22,7 +22,9 @@ entity Cliente {
   cli_fecha_nacimiento
   cli_mail
   cli_telefono
-  cli_domicilio
+  cli_direccion
+  cli_localidad
+  cli_provincia
 }
 
 entity Agente {
